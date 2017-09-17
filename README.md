@@ -1,5 +1,4 @@
-# Learning Android Databinding
+# Hello Databinding
 
-All the learning progress is divided by chapters spaced in each branch.
-
-  - Master (just the Android application with databinding enabled)
+This branch is just about the bare basics of Databinding.
+Think of it as a hello world kind of app.
