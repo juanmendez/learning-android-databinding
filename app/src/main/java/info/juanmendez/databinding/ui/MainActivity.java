@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         //That is a class which is created based on the layout name.
         // this is the format "{camelCase(layoutName)}+Binding"
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.setDataSource(  DataSource.get("Hello World!") );
+        binding.setDataSource(  DataSource.get("Hello from included layout!") );
 
         //Android DataBinding has generated new files which help out
         //to ease the code. This is similar in other libraries like Dagger, or AndroidAnnotations

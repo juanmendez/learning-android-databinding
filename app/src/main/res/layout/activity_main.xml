@@ -13,21 +13,12 @@
         android:layout_height="match_parent"
         tools:context="info.juanmendez.databinding.ui.MainActivity">
 
-        <TextView
-            android:padding="25dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{dataSource.name}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <include layout="@layout/text_layout" app:dataSource="@{dataSource}"/>
 
         <fragment android:name="info.juanmendez.databinding.ui.ChildFragment"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:id="@+id/child_fragment"/>
-
     </LinearLayout>
 </layout>
 
