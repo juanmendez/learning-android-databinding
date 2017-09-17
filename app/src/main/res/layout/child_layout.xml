@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout>
     <data>
         <variable
-            name="dataSource"
-            type="info.juanmendez.databinding.model.DataSource"/>
+            name="ds"
+            type="info.juanmendez.databinding.model.DataSource" />
     </data>
-    <FrameLayout
-        android:padding="25dp"
+
+    <info.juanmendez.databinding.ui.ChildView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:background="@color/colorAccent">
+        android:layout_height="match_parent"
+        android:paddingTop="25dp"
+        tools:showIn="@layout/activity_main">
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{dataSource.name}"/>
-    </FrameLayout>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@{ds.name}" />
+    </info.juanmendez.databinding.ui.ChildView>
 </layout>
