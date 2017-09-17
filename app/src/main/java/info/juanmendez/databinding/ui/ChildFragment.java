@@ -21,6 +21,8 @@ public class ChildFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        //ChildLayoutBinding this is a generated file based on the child_layout.xml
         ChildLayoutBinding binding = ChildLayoutBinding.inflate( inflater, container, false );
         binding.setDataSource( DataSource.get("Hello from static fragment!"));
 
