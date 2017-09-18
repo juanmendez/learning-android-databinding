@@ -14,8 +14,7 @@ In our data element we were required to import the View class.
 
 That allowed us to bind. We can come with other meaningful data-binding expressions using resources.
 
-```
-<TextView android:text"@{stringArray/ratingDefinitions[countrySource.stars]}"/>```
+```<TextView android:text"@{stringArray/ratingDefinitions[countrySource.stars]}"/>```
 
 
 Something else we can do at `@resource/strings.xml`
