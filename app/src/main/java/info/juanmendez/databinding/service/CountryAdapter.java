@@ -1,5 +1,7 @@
 package info.juanmendez.databinding.service;
 
+import android.content.Context;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -11,17 +13,18 @@ import java.util.List;
 
 import info.juanmendez.databinding.databinding.CountryViewBinding;
 import info.juanmendez.databinding.model.Country;
+import info.juanmendez.databinding.ui.WikiActivity;
 
 /**
  * Created by Juan Mendez on 9/17/2017.
  * www.juanmendez.info
  * contact@juanmendez.info
  */
-
 public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHolder> {
 
     private LayoutInflater inflater;
     private List<Country> countries;
+    public static final String COUNTRYPOS = "countryPosition";
 
     public CountryAdapter( @NonNull  LayoutInflater inflater, @NonNull  List<Country> countries) {
         this.inflater = inflater;
@@ -49,6 +52,15 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
 
         public ViewHolder(View itemView) {
             super(itemView);
+
+            itemView.setOnClickListener(v -> {
+                if( getCountry() != null ){
+                    Context context = v.getContext();
+                    Intent i = new Intent( context, WikiActivity.class);
+                    i.putExtra( COUNTRYPOS, countries.indexOf(getCountry()));
+                    context.startActivity(i);
+                }
+            });
         }
 
         public Country getCountry() {

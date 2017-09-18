@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout>
     <data>
+        <variable
+            name="countrySource"
+            type="info.juanmendez.databinding.model.Country"/>
     </data>
-
     <android.support.design.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="info.juanmendez.databinding.ui.MainActivity">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:fitsSystemWindows="true"
+        tools:context=".ui.WikiActivity">
 
-        <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
+        <android.support.design.widget.AppBarLayout android:layout_height="match_parent"
             android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay">
 
             <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+                app:title="@{countrySource.name}"
                 android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
-
         </android.support.design.widget.AppBarLayout>
 
-       <android.support.v7.widget.RecyclerView
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-           android:layout_height="match_parent" />
     </android.support.design.widget.CoordinatorLayout>
 </layout>

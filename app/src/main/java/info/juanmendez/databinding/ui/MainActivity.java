@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         //That is a class which is created based on the layout name.
         // this is the format "{camelCase(layoutName)}+Binding"
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         //Android DataBinding has generated new files which help out
         //to ease the code. This is similar in other libraries like Dagger, or AndroidAnnotations
