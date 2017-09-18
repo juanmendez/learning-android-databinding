@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="austria">Austria</string>
+    <string name="belgium">Belgium</string>
+    <string name="bulgaria">Bulgaria</string>
+    <string name="cyprus">Cyprus</string>
+    <string name="czech_republic">Czech Republic</string>
+    <string name="denmark">Denmark</string>
+    <string name="estonia">Estonia</string>
+    <string name="finland">Finland</string>
+    <string name="france">France</string>
+    <string name="germany">Germany</string>
+    <string name="greece">Greece</string>
+    <string name="hungary">Hungary</string>
+    <string name="ireland">Ireland</string>
+    <string name="italy">Italy</string>
+    <string name="latvia">Latvia</string>
+    <string name="lithuania">Lithuania</string>
+    <string name="luxembourg">Luxembourg</string>
+    <string name="malta">Malta</string>
+    <string name="netherlands">Netherlands</string>
+    <string name="poland">Poland</string>
+    <string name="portugal">Portugal</string>
+    <string name="romania">Romania</string>
+    <string name="slovakia">Slovakia</string>
+    <string name="slovenia">Slovenia</string>
+    <string name="spain">Spain</string>
+    <string name="sweden">Sweden</string>
+    <string name="united_kingdom">United Kingdom</string>
+</resources>

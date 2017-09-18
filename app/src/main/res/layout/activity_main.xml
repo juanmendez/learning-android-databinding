@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
     <data>
-        <variable name="dataSource" type="info.juanmendez.databinding.model.DataSource"/>
     </data>
 
     <LinearLayout
@@ -11,9 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="info.juanmendez.databinding.ui.MainActivity">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{dataSource.name}"/>
+
+       <android.support.v7.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+           android:layout_height="match_parent" />
     </LinearLayout>
 </layout>
