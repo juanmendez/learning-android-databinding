@@ -37,4 +37,8 @@ dependencies {
     implementation "com.android.support:design:${supportLibVersion}"
     implementation "com.android.support.constraint:constraint-layout:1.0.2"
     implementation "com.jakewharton.timber:timber:4.5.1"
+
+    implementation "com.mikepenz:iconics-core:2.9.3@aar"
+    implementation "com.mikepenz:material-design-iconic-typeface:2.2.0.3@aar"
+    implementation "com.mikepenz:iconics-views:2.9.3@aar"
 }

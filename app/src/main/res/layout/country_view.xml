@@ -1,18 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
+        <import type="android.view.View"/>
         <variable
             name="countrySource"
             type="info.juanmendez.databinding.model.Country"/>
     </data>
 
-    <FrameLayout
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" android:padding="20dp">
         <TextView
             android:id="@+id/countryTextView"
             android:text="@{countrySource.name}"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-    </FrameLayout>
+
+
+        <ImageView
+            style="@style/AppTheme.IconFace"
+            app:ico_icon="gmi-face"
+            android:visibility="@{countrySource.timesVisited>=1?View.VISIBLE:View.GONE}"/>
+
+        <ImageView
+            style="@style/AppTheme.IconFace"
+            app:ico_icon="gmi-face"
+            android:visibility="@{countrySource.timesVisited>=2?View.VISIBLE:View.GONE}"/>
+
+        <ImageView
+            style="@style/AppTheme.IconFace"
+            app:ico_icon="gmi-face"
+            android:visibility="@{countrySource.timesVisited>=3?View.VISIBLE:View.GONE}"/>
+
+    </LinearLayout>
 </layout>

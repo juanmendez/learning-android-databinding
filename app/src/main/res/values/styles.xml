@@ -10,4 +10,12 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.IconFace">
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="ico_color">@color/colorAccent</item>
+        <item name="ico_size">30dp</item>
+    </style>
 </resources>

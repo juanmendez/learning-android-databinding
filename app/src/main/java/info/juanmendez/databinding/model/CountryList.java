@@ -19,7 +19,7 @@ import info.juanmendez.databinding.R;
  */
 public class CountryList {
 
-    public static ArrayList<Country> EU=new ArrayList<Country>();
+    public    static ArrayList<Country> EU=new ArrayList<Country>();
 
     static {
         EU.add(new Country(R.string.austria, R.drawable.austria,
@@ -34,15 +34,15 @@ public class CountryList {
                 R.drawable.czech_republic,
                 R.string.czech_republic_url));
         EU.add(new Country(R.string.denmark, R.drawable.denmark,
-                R.string.denmark_url));
+                R.string.denmark_url, 2));
         EU.add(new Country(R.string.estonia, R.drawable.estonia,
                 R.string.estonia_url));
         EU.add(new Country(R.string.finland, R.drawable.finland,
                 R.string.finland_url));
         EU.add(new Country(R.string.france, R.drawable.france,
-                R.string.france_url));
+                R.string.france_url, 2));
         EU.add(new Country(R.string.germany, R.drawable.germany,
-                R.string.germany_url));
+                R.string.germany_url, 2));
         EU.add(new Country(R.string.greece, R.drawable.greece,
                 R.string.greece_url));
         EU.add(new Country(R.string.hungary, R.drawable.hungary,
@@ -52,7 +52,7 @@ public class CountryList {
         EU.add(new Country(R.string.italy, R.drawable.italy,
                 R.string.italy_url));
         EU.add(new Country(R.string.latvia, R.drawable.latvia,
-                R.string.latvia_url));
+                R.string.latvia_url, 1));
         EU.add(new Country(R.string.lithuania, R.drawable.lithuania,
                 R.string.lithuania_url));
         EU.add(new Country(R.string.luxembourg, R.drawable.luxembourg,
@@ -60,9 +60,13 @@ public class CountryList {
         EU.add(new Country(R.string.malta, R.drawable.malta,
                 R.string.malta_url));
         EU.add(new Country(R.string.netherlands, R.drawable.netherlands,
-                R.string.netherlands_url));
+                R.string.netherlands_url, 1));
+
+        EU.add(new Country(R.string.norway, R.drawable.norway,
+                R.string.norway_url, 1));
+
         EU.add(new Country(R.string.poland, R.drawable.poland,
-                R.string.poland_url));
+                R.string.poland_url, 1));
         EU.add(new Country(R.string.portugal, R.drawable.portugal,
                 R.string.portugal_url));
         EU.add(new Country(R.string.romania, R.drawable.romania,
@@ -74,7 +78,7 @@ public class CountryList {
         EU.add(new Country(R.string.spain, R.drawable.spain,
                 R.string.spain_url));
         EU.add(new Country(R.string.sweden, R.drawable.sweden,
-                R.string.sweden_url));
+                R.string.sweden_url, 1));
         EU.add(new Country(R.string.united_kingdom,
                 R.drawable.united_kingdom,
                 R.string.united_kingdom_url));

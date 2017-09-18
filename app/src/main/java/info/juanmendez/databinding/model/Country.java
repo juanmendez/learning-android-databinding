@@ -4,11 +4,17 @@ public class Country {
     int name;
     int flag;
     int url;
+    int timesVisited;
 
     Country(int name, int flag, int url) {
         this.name=name;
         this.flag=flag;
         this.url=url;
+    }
+
+    Country(int name, int flag, int url, int timesVisited ){
+        this( name, flag, url );
+        this.timesVisited = timesVisited;
     }
 
     public int getName() {
@@ -21,5 +27,9 @@ public class Country {
 
     public int getUrl() {
         return url;
+    }
+
+    public int getTimesVisited() {
+        return timesVisited;
     }
 }
