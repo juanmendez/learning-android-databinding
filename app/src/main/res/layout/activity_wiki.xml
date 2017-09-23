@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
     <data>
+        <import type="info.juanmendez.databinding.R"/>
         <variable
             name="countrySource"
             type="info.juanmendez.databinding.model.Country"/>
@@ -12,14 +13,28 @@
         android:layout_height="match_parent" android:fitsSystemWindows="true"
         tools:context=".ui.WikiActivity">
 
-        <android.support.design.widget.AppBarLayout android:layout_height="match_parent"
+        <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
             android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay">
 
             <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
                 app:title="@{countrySource.name}"
+                app:toolBarIcon="@{countrySource.flag==0?R.drawable.eu:countrySource.flag}"
                 android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
         </android.support.design.widget.AppBarLayout>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <WebView
+                android:id="@+id/wiki_webView"
+                app:loadUrl="@{countrySource.url}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></WebView>
+        </LinearLayout>
     </android.support.design.widget.CoordinatorLayout>
 </layout>

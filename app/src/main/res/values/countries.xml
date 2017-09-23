@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="austria">Austria</string>
+    <string name="austria">Austria {no-data}</string>
     <string name="belgium">Belgium</string>
     <string name="bulgaria">Bulgaria</string>
     <string name="cyprus">Cyprus</string>

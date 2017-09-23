@@ -23,7 +23,6 @@ public class WikiActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_wiki);
         ActivityWikiBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_wiki);
-
         int countryPosition = getIntent().getIntExtra(CountryAdapter.COUNTRYPOS, -1);
         binding.setCountrySource(CountryList.EU.get(countryPosition));
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

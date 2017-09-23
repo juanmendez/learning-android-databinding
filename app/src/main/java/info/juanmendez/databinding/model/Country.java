@@ -6,6 +6,10 @@ public class Country {
     int url;
     int timesVisited;
 
+    public Country(int name) {
+        this.name = name;
+    }
+
     Country(int name, int flag, int url) {
         this.name=name;
         this.flag=flag;
