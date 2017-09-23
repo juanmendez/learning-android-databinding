@@ -26,4 +26,4 @@ So this is how my webview looks
 
 This is what it looks like:
 
-[![N|Solid](github/slovakia.png)]
+[![N|Solid](github/slovakia.png){:width="350px"}]
