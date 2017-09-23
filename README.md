@@ -25,4 +25,4 @@ So this is how my webview looks
 ```
 
 This is what it looks like:
-![](/github/slovakia.png =375x)
+![](./github/slovakia.png)
