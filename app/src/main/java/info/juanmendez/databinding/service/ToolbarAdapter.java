@@ -1,6 +1,7 @@
 package info.juanmendez.databinding.service;
 
 import android.databinding.BindingAdapter;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.Toolbar;
 
 /**
@@ -15,6 +16,16 @@ public class ToolbarAdapter {
 
         if( iconId != 0 ){
             toolbar.setNavigationIcon(iconId);
+        }
+    }
+
+    @BindingAdapter({"toolBarIcon","toolBarIconDefault"})
+    public static void setToolBarIcon(Toolbar toolbar, int iconId, Drawable defaultIcon){
+
+        if( iconId != 0 ){
+            toolbar.setNavigationIcon(iconId);
+        }else{
+            toolbar.setNavigationIcon(defaultIcon);
         }
     }
 }

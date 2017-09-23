@@ -18,7 +18,8 @@
 
             <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
                 app:title="@{countrySource.name}"
-                app:toolBarIcon="@{countrySource.flag==0?R.drawable.eu:countrySource.flag}"
+                app:toolBarIcon="@{countrySource.flag}"
+                app:toolBarIconDefault="@{@drawable/eu}"
                 android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
         </android.support.design.widget.AppBarLayout>
