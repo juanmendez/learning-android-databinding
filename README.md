@@ -1,26 +1,24 @@
-# Binding with expressions
+# Custom Adapters
 
-I made the `Country` model have a new property called `timesVisited`.
+Now these are adapters created to bind to UI elements not originally supported by Databinding
+ `service/PicassoImageAdapter, service/WebViewAdapter, service/toolbarAdapter`.
+ These adapters are used @`activity_wiki.xml`
 
-The recyclerView has now next to each country several faces which are the total times each country has been visited.
+ The goal is to make sure the adapters are working by going to `Build/Make Project`.
+ One can identify if there are issues with the adapter at the console.
+ In my case I had at times binding adapters which didn't match the argument type passed into the view.
+ That was my case when passing a string id to WebView. I had to make sure to include an adapter supporting an integer.
 
-It was easy to do this by making use of
+ ```
+@BindingAdapter("loadUrl")
+    public static void loadUrl(WebView view, int urlId) {
+        if( urlId != 0 ){
+            loadUrl( view,view.getResources().getString( urlId ) );
+        }
+    }
+```
 
-```android:visibility="@{countrySource.timesVisited>=1?View.VISIBLE:View.GONE}"```
-
-In our data element we were required to import the View class.
-
-``` <import type="android.view.View"/>```
-
-That allowed us to bind. We can come with other meaningful data-binding expressions using resources.
-
-```<TextView android:text"@{stringArray/ratingDefinitions[countrySource.stars]}"/>```
-
-
-Something else we can do at `@resource/strings.xml`
-
-```<string name="welcome">Welcome to %s</string>```
-
-Then in our `activity_wiki.xml`'s toolbar
-
-```app:title="@{@string/welcome(countrySource.name)}"```
+So this is how my webview looks
+```xml
+<WebView app:loadUrl="@{countrySource.url}"...></WebView>
+```
