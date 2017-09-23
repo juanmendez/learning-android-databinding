@@ -25,5 +25,4 @@ So this is how my webview looks
 ```
 
 This is what it looks like:
-
-[![N|Solid](github/slovakia.png)]
+![](/github/slovakia.png =375x)
