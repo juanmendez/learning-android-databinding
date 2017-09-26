@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso;
  * contact@juanmendez.info
  */
 
-public class PicassoImageAdapter {
+public class ImageAdapter {
 
     private static Picasso picasso;
 

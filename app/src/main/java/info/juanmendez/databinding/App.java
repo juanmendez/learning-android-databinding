@@ -10,12 +10,11 @@ import timber.log.Timber;
  * www.juanmendez.info
  * contact@juanmendez.info
  */
-
 public class App extends Application {
+
     @Override
     public void onCreate() {
         super.onCreate();
         Timber.plant( new Timber.DebugTree());
     }
-
 }

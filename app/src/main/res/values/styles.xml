@@ -15,7 +15,12 @@
         <item name="android:paddingLeft">12dp</item>
         <item name="android:layout_width">30dp</item>
         <item name="android:layout_height">30dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
         <item name="ico_color">@color/colorAccent</item>
         <item name="ico_size">30dp</item>
+    </style>
+
+    <style name="AppTheme.Flag">
+        <item name="android:layout_marginRight">15dp</item>
     </style>
 </resources>

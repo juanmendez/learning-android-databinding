@@ -5,6 +5,10 @@
         <variable
             name="countrySource"
             type="info.juanmendez.databinding.model.Country"/>
+
+        <variable
+            name="appViewModel"
+            type="info.juanmendez.databinding.model.AppViewModel"/>
     </data>
     <android.support.design.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,8 +22,7 @@
 
             <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
                 app:title="@{countrySource.name}"
-                app:toolBarIcon="@{countrySource.flag}"
-                app:toolBarIconDefault="@{@drawable/eu}"
+                app:toolBarIcon="@{appViewModel.showFlags?countrySource.flag:0}"
                 android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
         </android.support.design.widget.AppBarLayout>

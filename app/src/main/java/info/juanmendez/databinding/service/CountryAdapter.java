@@ -9,10 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.List;
-
 import info.juanmendez.databinding.databinding.CountryViewBinding;
+import info.juanmendez.databinding.model.AppViewModel;
 import info.juanmendez.databinding.model.Country;
+import info.juanmendez.databinding.model.CountryViewModel;
 import info.juanmendez.databinding.ui.WikiActivity;
 
 /**
@@ -23,12 +23,11 @@ import info.juanmendez.databinding.ui.WikiActivity;
 public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHolder> {
 
     private LayoutInflater inflater;
-    private List<Country> countries;
+
     public static final String COUNTRYPOS = "countryPosition";
 
-    public CountryAdapter( @NonNull  LayoutInflater inflater, @NonNull  List<Country> countries) {
+    public CountryAdapter( @NonNull  LayoutInflater inflater) {
         this.inflater = inflater;
-        this.countries = countries;
     }
 
     @Override
@@ -39,12 +38,12 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.setCountry( countries.get(position) );
+        holder.setCountry( getCountryViewModel().getCountries().get(position) );
     }
 
     @Override
     public int getItemCount() {
-        return countries.size();
+        return getCountryViewModel().getCountries().size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -55,9 +54,11 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
 
             itemView.setOnClickListener(v -> {
                 if( getCountry() != null ){
+
+                    getCountryViewModel().setSelectedCountry( country );
+
                     Context context = v.getContext();
                     Intent i = new Intent( context, WikiActivity.class);
-                    i.putExtra( COUNTRYPOS, countries.indexOf(getCountry()));
                     context.startActivity(i);
                 }
             });
@@ -71,6 +72,15 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
             this.country = country;
             CountryViewBinding binding = DataBindingUtil.getBinding(itemView);
             binding.setCountrySource(country);
+            binding.setAppViewModel(getAppViewModel());
         }
+    }
+
+    private AppViewModel getAppViewModel(){
+        return AppViewModel.getAppViewModel();
+    }
+
+    private CountryViewModel getCountryViewModel(){
+        return CountryViewModel.getCountryViewModel();
     }
 }

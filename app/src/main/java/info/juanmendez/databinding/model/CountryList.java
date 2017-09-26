@@ -22,7 +22,8 @@ public class CountryList {
     public    static ArrayList<Country> EU=new ArrayList<Country>();
 
     static {
-        EU.add(new Country(R.string.austria));
+        EU.add(new Country(R.string.austria, R.drawable.austria,
+                R.string.austria_url));
         EU.add(new Country(R.string.belgium, R.drawable.belgium,
                 R.string.belgium_url));
         EU.add(new Country(R.string.bulgaria, R.drawable.bulgaria,

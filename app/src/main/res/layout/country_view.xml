@@ -6,17 +6,30 @@
         <variable
             name="countrySource"
             type="info.juanmendez.databinding.model.Country"/>
+
+        <variable
+            name="appViewModel"
+            type="info.juanmendez.databinding.model.AppViewModel"/>
     </data>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" android:padding="20dp">
+
+        <ImageView
+            android:visibility="@{appViewModel.showFlags?View.VISIBLE:View.GONE}"
+            style="@style/AppTheme.Flag"
+            app:picassoSrc="@{countrySource.flag}"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/countryTextView"
             android:text="@{countrySource.name}"
+            app:styleMode="@{appViewModel.dayMode}"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"/>
 
 
         <ImageView

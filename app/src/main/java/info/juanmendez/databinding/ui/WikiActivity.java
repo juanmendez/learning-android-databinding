@@ -7,8 +7,8 @@ import android.support.v7.widget.Toolbar;
 
 import info.juanmendez.databinding.R;
 import info.juanmendez.databinding.databinding.ActivityWikiBinding;
-import info.juanmendez.databinding.model.CountryList;
-import info.juanmendez.databinding.service.CountryAdapter;
+import info.juanmendez.databinding.model.AppViewModel;
+import info.juanmendez.databinding.model.CountryViewModel;
 
 /**
  * Created by Juan Mendez on 9/17/2017.
@@ -20,11 +20,14 @@ public class WikiActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         //setContentView(R.layout.activity_wiki);
         ActivityWikiBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_wiki);
-        int countryPosition = getIntent().getIntExtra(CountryAdapter.COUNTRYPOS, -1);
-        binding.setCountrySource(CountryList.EU.get(countryPosition));
+
+        binding.setCountrySource(CountryViewModel.getCountryViewModel().getSelectedCountry());
+        binding.setAppViewModel(AppViewModel.getAppViewModel());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
