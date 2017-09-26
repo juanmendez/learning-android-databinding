@@ -1,4 +1,9 @@
 # Hello Databinding
 
-This branch is just about the bare basics of Databinding.
-Think of it as a hello world kind of app.
+We experiment with binding the recylerView. In this case our parent view is the one which provides to the current binding the adapter, and layout type.
+
+*   ` binding.list.setAdapter(adapter)`
+*   `binding.list.setLayoutManager(layoutManager)`
+
+Making the binding available to the recycleView then helps to also bind each of its listed views.
+Checkout `CountryAdapter.ViewHolder`
