@@ -43,13 +43,14 @@ public class CountryViewModel extends BaseObservable{
         }
     }
 
+    @Bindable
     public Country getSelectedCountry() {
         return selectedCountry;
     }
 
     public void setSelectedCountry(Country selectedCountry) {
         this.selectedCountry = selectedCountry;
-        notifyChange();
+        notifyPropertyChanged(BR.selectedCountry);
     }
 
     private static CountryViewModel countryViewModel;

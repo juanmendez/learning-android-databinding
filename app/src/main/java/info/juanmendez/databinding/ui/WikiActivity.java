@@ -34,7 +34,7 @@ public class WikiActivity extends AppCompatActivity{
         toolbar.setOnMenuItemClickListener(item -> {
 
             if( item.getItemId() == R.id.delete ){
-                CountryViewModel.getVM().removeSelectedCountry(toolbar);
+                CountryViewModel.getVM().removeSelectedCountry(null);
                 finish();
             }
 
