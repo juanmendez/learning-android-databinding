@@ -37,7 +37,7 @@ Things I discoverd in MVVM.
                });
    ```
 * Double binding works, and I might need to do further research as it is happeing in `activity_main.xml`. There I am using the switches to display the boolean values, but also those same values can be updated by their switches. `@={appViewModel.dayMode}`
-* I had to update this branch as I discovered more of how binding works. My ViewModels turned into two observable objects which have brains and can do more login under the hood. I worked before in AngularJS, and KnockoutJS so for me this was a rewind of old work. It is exciting to see MVVM being done in Android.
+* I had to update this branch as I discovered more of how binding works. My ViewModels turned into two observable objects which have brains and can do more logic under the hood. I worked before in AngularJS, and KnockoutJS so for me this was a rewind of old work. It is exciting to see MVVM being done in Android.
 
 
 So here our daylight switch is on, and so is our show-flags switch.
