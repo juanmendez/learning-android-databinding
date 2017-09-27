@@ -9,4 +9,4 @@ All the learning progress is divided by chapters spaced in each branch.
   - [binding recycler views and their items](https://github.com/juanmendez/learning-android-databinding/tree/04.bindingWithRecyclerView)   
   - [binding-expressions in layouts](https://github.com/juanmendez/learning-android-databinding/tree/05.expression_language)
   - [making your own binding adapters](https://github.com/juanmendez/learning-android-databinding/tree/06.custom_adapters)  
-  - [two way binding](https://github.com/juanmendez/learning-android-databinding/tree/07.mvvm)
+  - [mvvm](https://github.com/juanmendez/learning-android-databinding/tree/07.mvvm)
