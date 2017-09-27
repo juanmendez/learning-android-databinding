@@ -44,17 +44,15 @@
                     android:text="daylight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="@{appViewModel.dayMode}"
-                    app:styleMode="@{appViewModel.dayMode}"
-                    android:onCheckedChanged="@{appViewModel::setDayMode}"/>
+                    android:checked="@={appViewModel.dayMode}"
+                    app:styleMode="@{appViewModel.dayMode}" />
 
                 <android.support.v7.widget.SwitchCompat
                     android:text="flag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="@{appViewModel.showFlags}"
-                    app:styleMode="@{appViewModel.dayMode}"
-                    android:onCheckedChanged="@{appViewModel::setShowFlags}"/>
+                    android:checked="@={appViewModel.showFlags}"
+                    app:styleMode="@{appViewModel.dayMode}" />
             </LinearLayout>
 
 
