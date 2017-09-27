@@ -6,18 +6,16 @@ import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
-import android.widget.CompoundButton;
 
 import com.mikepenz.iconics.context.IconicsLayoutInflater;
 
 import info.juanmendez.databinding.R;
 import info.juanmendez.databinding.databinding.ActivityMainBinding;
-import info.juanmendez.databinding.model.AppViewListener;
 import info.juanmendez.databinding.model.AppViewModel;
 import info.juanmendez.databinding.model.CountryViewModel;
 import info.juanmendez.databinding.service.CountryAdapter;
 
-public class MainActivity extends AppCompatActivity implements AppViewListener {
+public class MainActivity extends AppCompatActivity{
 
     CountryViewModel countryViewModel;
     ActivityMainBinding binding;
@@ -39,11 +37,9 @@ public class MainActivity extends AppCompatActivity implements AppViewListener {
         // this is the format "{camelCase(layoutName)}+Binding"
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setAppViewModel(getAppViewModel());
-        binding.setAppViewListener(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         //Android DataBinding has generated new files which help out
         //to ease the code. This is similar in other libraries like Dagger, or AndroidAnnotations
@@ -52,20 +48,10 @@ public class MainActivity extends AppCompatActivity implements AppViewListener {
     }
 
     private AppViewModel getAppViewModel(){
-        return AppViewModel.getAppViewModel();
+        return AppViewModel.getVM();
     }
 
     private CountryViewModel getCountryViewModel(){
-        return CountryViewModel.getCountryViewModel();
-    }
-
-    @Override
-    public void setShowFlags(CompoundButton view, boolean showFlags) {
-        getAppViewModel().showFlags.set(showFlags);
-    }
-
-    @Override
-    public void setDayMode(CompoundButton view, boolean dayMode) {
-        getAppViewModel().dayMode.set(dayMode);
+        return CountryViewModel.getVM();
     }
 }

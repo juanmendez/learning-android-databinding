@@ -3,17 +3,21 @@ package info.juanmendez.databinding.service;
 import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.databinding.Observable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import info.juanmendez.databinding.BR;
 import info.juanmendez.databinding.databinding.CountryViewBinding;
 import info.juanmendez.databinding.model.AppViewModel;
 import info.juanmendez.databinding.model.Country;
 import info.juanmendez.databinding.model.CountryViewModel;
 import info.juanmendez.databinding.ui.WikiActivity;
+
+import static android.databinding.Observable.OnPropertyChangedCallback;
 
 /**
  * Created by Juan Mendez on 9/17/2017.
@@ -28,6 +32,19 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
 
     public CountryAdapter( @NonNull  LayoutInflater inflater) {
         this.inflater = inflater;
+
+        /**
+         * Here we listen for updates from countryViewModel happening @countries.
+         * Checkout countryViewModel.removeSelectedCountry()
+         */
+        getCountryViewModel().addOnPropertyChangedCallback(new OnPropertyChangedCallback() {
+            @Override
+            public void onPropertyChanged(Observable observable, int brId) {
+                if(BR.countries == brId){
+                    notifyDataSetChanged();
+                }
+            }
+        });
     }
 
     @Override
@@ -77,10 +94,10 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
     }
 
     private AppViewModel getAppViewModel(){
-        return AppViewModel.getAppViewModel();
+        return AppViewModel.getVM();
     }
 
     private CountryViewModel getCountryViewModel(){
-        return CountryViewModel.getCountryViewModel();
+        return CountryViewModel.getVM();
     }
 }

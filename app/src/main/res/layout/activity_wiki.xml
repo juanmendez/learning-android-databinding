@@ -2,13 +2,14 @@
 <layout>
     <data>
         <import type="info.juanmendez.databinding.R"/>
-        <variable
-            name="countrySource"
-            type="info.juanmendez.databinding.model.Country"/>
 
         <variable
             name="appViewModel"
             type="info.juanmendez.databinding.model.AppViewModel"/>
+
+        <variable
+            name="countryViewModel"
+            type="info.juanmendez.databinding.model.CountryViewModel"/>
     </data>
     <android.support.design.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -21,21 +22,21 @@
             android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay">
 
             <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
-                app:title="@{countrySource.name}"
-                app:toolBarIcon="@{appViewModel.showFlags?countrySource.flag:0}"
+                app:title="@{countryViewModel.selectedCountry.name}"
+                app:toolBarIcon="@{appViewModel.showFlags?countryViewModel.selectedCountry.flag:0}"
                 android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
         </android.support.design.widget.AppBarLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <WebView
                 android:id="@+id/wiki_webView"
-                app:loadUrl="@{countrySource.url}"
+                app:loadUrl="@{countryViewModel.selectedCountry.url}"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"></WebView>

@@ -26,9 +26,19 @@ public class WikiActivity extends AppCompatActivity{
         //setContentView(R.layout.activity_wiki);
         ActivityWikiBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_wiki);
 
-        binding.setCountrySource(CountryViewModel.getCountryViewModel().getSelectedCountry());
-        binding.setAppViewModel(AppViewModel.getAppViewModel());
+        binding.setAppViewModel(AppViewModel.getVM());
+        binding.setCountryViewModel( CountryViewModel.getVM());
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        toolbar.inflateMenu(R.menu.menu_wiki);
+        toolbar.setOnMenuItemClickListener(item -> {
+
+            if( item.getItemId() == R.id.delete ){
+                CountryViewModel.getVM().removeSelectedCountry(toolbar);
+                finish();
+            }
+
+            return false;
+        });
     }
 }

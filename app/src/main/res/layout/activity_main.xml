@@ -5,10 +5,6 @@
         <variable
             name="appViewModel"
             type="info.juanmendez.databinding.model.AppViewModel"/>
-
-        <variable
-            name="appViewListener"
-            type="info.juanmendez.databinding.model.AppViewListener"/>
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -50,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:checked="@{appViewModel.dayMode}"
                     app:styleMode="@{appViewModel.dayMode}"
-                    android:onCheckedChanged="@{appViewListener.setDayMode}"/>
+                    android:onCheckedChanged="@{appViewModel::setDayMode}"/>
 
                 <android.support.v7.widget.SwitchCompat
                     android:text="flag"
@@ -58,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:checked="@{appViewModel.showFlags}"
                     app:styleMode="@{appViewModel.dayMode}"
-                    android:onCheckedChanged="@{appViewListener.setShowFlags}"/>
+                    android:onCheckedChanged="@{appViewModel::setShowFlags}"/>
             </LinearLayout>
 
 
