@@ -18,15 +18,23 @@ public class AppViewModel extends BaseObservable{
     @Bindable public final ObservableBoolean showFlags = new ObservableBoolean();
 
     /**
-     * For testing sake, lets see how a bindable method will work with @=
+     * For testing sake, lets see how a bindable method will work using double binding.
+     * In activity_main the toolbar title is bound to appName and has a default title if empty.
+     * In case appName is null then the toolbar has no title. So for it to work it is an empty string.
      */
-    private String appName = "";
+    private String appName="";
 
     @Bindable
     public String getAppName() {
         return appName;
     }
 
+    /**
+     * So this proves it works. This is great if you need to update an attribute of a pojo being part
+     * of your viewModel. Similarly in your own setter you can update the pojo's attribute while
+     * notifying the pojo as a whole was updated. notifyPropertyChanged(BR.myPojo)
+     * @param appName a new toolbar title!
+     */
     public void setAppName(String appName) {
         this.appName = appName;
         Timber.i("appName change: " + appName );
