@@ -5,6 +5,8 @@ import android.databinding.BindingAdapter;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import info.juanmendez.databinding.R;
+
 /**
  * Created by Juan Mendez on 9/25/2017.
  * www.juanmendez.info
@@ -29,8 +31,10 @@ public class ThemeAdapter {
 
         if( dayMode){
             textView.setTextColor( resources.getColor(android.R.color.black));
+            textView.setHintTextColor(resources.getColor(R.color.colorAccent));
         }else{
             textView.setTextColor( resources.getColor(android.R.color.white));
+            textView.setHintTextColor(resources.getColor(android.R.color.darker_gray));
         }
     }
 }

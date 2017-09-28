@@ -3,4 +3,5 @@
     <string name="european_union">European Union</string>
     <string name="welcome">welcome to %s!</string>
     <string name="delete">delete</string>
+    <string name="name_the_app">name the app</string>
 </resources>
