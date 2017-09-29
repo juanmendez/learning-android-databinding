@@ -47,6 +47,14 @@ public class MainActivity extends AppCompatActivity{
         binding.list.setAdapter( new CountryAdapter(getLayoutInflater()));
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        //it's a good practice to do: removeOnPropertyChangedCallback
+        ((CountryAdapter)binding.list.getAdapter()).onDestroy();
+    }
+
     private AppViewModel getAppViewModel(){
         return AppViewModel.getVM();
     }

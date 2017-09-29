@@ -27,7 +27,7 @@ import static android.databinding.Observable.OnPropertyChangedCallback;
 public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHolder> {
 
     private LayoutInflater inflater;
-
+    private OnPropertyChangedCallback callback;
     public static final String COUNTRYPOS = "countryPosition";
 
     public CountryAdapter( @NonNull  LayoutInflater inflater) {
@@ -37,7 +37,8 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
          * Here we listen for updates from countryViewModel happening @countries.
          * Checkout countryViewModel.removeSelectedCountry()
          */
-        getCountryViewModel().addOnPropertyChangedCallback(new OnPropertyChangedCallback() {
+
+        getCountryViewModel().addOnPropertyChangedCallback( callback = new OnPropertyChangedCallback() {
             @Override
             public void onPropertyChanged(Observable observable, int brId) {
                 if(BR.countries == brId){
@@ -45,6 +46,11 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
                 }
             }
         });
+    }
+
+    //remove leaking...
+    public void onDestroy(){
+        getCountryViewModel().removeOnPropertyChangedCallback(callback);
     }
 
     @Override
