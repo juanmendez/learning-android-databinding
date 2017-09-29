@@ -18,7 +18,7 @@ public class AppViewModel extends BaseObservable{
     @Bindable public final ObservableBoolean showFlags = new ObservableBoolean();
 
     /**
-     * For testing sake, lets see how a bindable method will work using double binding aka @=.
+     * For testing sake, lets see how a bindable method will work using double binding.
      * In activity_main the toolbar title is bound to appName and has a default title if empty.
      * In case appName is null then the toolbar has no title. So for it to work it is an empty string.
      */
