@@ -40,6 +40,6 @@ Things I discoverd in MVVM.
 * I had to update this branch as I discovered more of how binding works. My ViewModels turned into two observable objects which have brains and can do more logic under the hood. I worked before in AngularJS, and KnockoutJS so for me this was a rewind of old work. It is exciting to see MVVM being done in Android.
 
 
-So here our daylight switch is on, and so is our show-flags switch.
+So here our daylight switch is off, and our show-flags switch is on.
 
 ![](./github/nightMode.jpg)
